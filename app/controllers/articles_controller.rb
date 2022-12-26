@@ -5,8 +5,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    puts params
     @article = Article.find(params[:id])
+    @likes_amount = 10
   end
 
   def new
