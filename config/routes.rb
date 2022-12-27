@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
-  get 'users/new'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  root "articles#index"
+  # root "articles#index"
+
+  get '/register', to: 'users#create'
+  resources :users, only: [:create]
+  get '/sign_in', to: 'sessions#new'
+  get '/sign_out', to: 'sessions#destroy'
+  resources :sessions, only: [:create]
 
   resources :articles do
     resources :comments
   end
-
-  get '/register', to: 'users#create'
-  resources :users, only: [:create]
   #mapping routes for:
   #   root GET    /                            articles#index
   #   articles GET    /articles(.:format)          articles#index
