@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+
+  get '/register', to: 'users#create'
+  resources :users, only: [:create]
   #mapping routes for:
   #   root GET    /                            articles#index
   #   articles GET    /articles(.:format)          articles#index
