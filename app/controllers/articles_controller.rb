@@ -7,8 +7,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @likes_amount = 10
-    # @likes_amount = Like(article: params[:id])
+    @likes_amount = Like.count()
   end
 
   def new
