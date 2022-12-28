@@ -1,11 +1,24 @@
-<h1 class="text-3xl font-bold underline text-red-500">Articles</h1>
+<div class="flex text-3xl pt-5 justify-between items-center">
+  <h1 class="font-bold">Articles</h1>
+  <div class="text-blue-500"><%= link_to "+", new_article_path %></div>
+</div>
 
-<ul>
+<div class="flex pt-2">
   <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article %>
-    </li>
+    <div class="max-w-sm rounded overflow-hidden shadow-md basis-1/3 mx-1">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">
+          <%= link_to article.title, article %>
+        </div>
+        <p class="text-gray-700 text-base">
+          <%= article.body %>
+        </p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+          #article
+        </span>
+      </div>
+    </div>
   <% end %>
-</ul>
-
-<%= link_to "New Article", new_article_path %>
+</div>
