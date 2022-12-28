@@ -1,20 +1,21 @@
-<h1><%= @article.title %></h1>
-
-<p><%= @article.body %></p>
-
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <li><%= link_to "Destroy", article_path(@article), data: {
-    turbo_method: :delete,
-    turbo_confirm: "Are you sure?"
-  } %></li>
-</ul>
-
-<div>
-  <%= @likes_amount %> likes
+<div class="flex pt-5 justify-between items-center">
+  <h1 class="font-bold text-3xl"><%= @article.title %></h1>
+  <div class="flex">
+    <div class="mr-2"><%= link_to "Edit", edit_article_path(@article) %></div>
+    <div class="text-red-500"><%= link_to "Delete", article_path(@article), data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+    } %></div>
+  </div>
 </div>
 
-<h2>Comments</h2>
+<p class="py-3"><%= @article.body %></p>
+
+<div class="text-red-500">
+  <%= @likes_amount %> ♥
+</div>
+
+<h2 class="mt-3">Comments</h2>
 <% @article.comments.each do |comment| %>
   <p>
     <strong>Commenter:</strong>
