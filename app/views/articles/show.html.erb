@@ -12,7 +12,11 @@
 <p class="py-3"><%= @article.body %></p>
 
 <div class="text-red-500">
-  <%= @likes_amount %> ♥
+  <%= form_with model: [ @article, @article.likes.build ] do %>
+    <button type="submit">
+      <span><%= @likes_amount %> ♥</span>
+    </button>
+  <% end %>
 </div>
 
 <h2 class="mt-3">Comments</h2>

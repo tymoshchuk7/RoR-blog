@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :articles do
     resources :comments
+    resources :likes
   end
   #mapping routes for:
   #   root GET    /                            articles#index
