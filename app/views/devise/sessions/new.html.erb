@@ -25,9 +25,7 @@
         Do not have an account? <span class="text-blue-500"><%= render "devise/shared/links" %></span>
       </div>
 
-      <div class="mt-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center rounded p-2">
-        <%= f.submit "Submit" %>
-      </div>
+      <%= f.submit "Submit", class: 'mt-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center rounded p-2 block w-full cursor-pointer' %>
     <% end %>
   </div>
 </div>
