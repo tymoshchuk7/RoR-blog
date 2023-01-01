@@ -10,6 +10,16 @@
       </div>
 
       <div class="mt-2">
+        <%= f.label "First name", class: 'text-sm text-gray-500' %><br />
+        <%= f.text_field :first_name, class: "rounded" %>
+      </div>
+
+      <div class="mt-2">
+        <%= f.label "Second name", class: 'text-sm text-gray-500' %><br />
+        <%= f.text_field :second_name, class: "rounded" %>
+      </div>
+
+      <div class="mt-2">
         <%= f.label :password, class: 'text-sm text-gray-500' %>
         <% if @minimum_password_length %>
           <em class="text-sm text-gray-500">(<%= @minimum_password_length %> characters minimum)</em>
