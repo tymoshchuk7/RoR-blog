@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @articles = Article.all.joins(:user).page(params[:page])
+    @articles = Article.search(params[:search]).joins(:user).page(params[:page])
   end
 
   def show

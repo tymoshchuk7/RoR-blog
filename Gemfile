@@ -73,6 +73,5 @@ end
 
 gem 'devise'
 gem 'kaminari'
-gem 'ransack'
 
 gem "tailwindcss-rails", "~> 2.0"
