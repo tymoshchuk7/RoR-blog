@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :comments
     resources :likes
   end
+  resources :dialogues
   #mapping routes for:
   #   root GET    /                            articles#index
   #   articles GET    /articles(.:format)          articles#index
