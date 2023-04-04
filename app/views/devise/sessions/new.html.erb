@@ -1,5 +1,4 @@
-<div class="flex justify-center align-center">
-  <div class="shadow-xl p-5 bg-white">
+  <div class="shadow-xl p-5 bg-white w-96">
     <h2 class="text-lg font-bold">Log in</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -28,4 +27,3 @@
       <%= f.submit "Submit", class: 'mt-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center rounded p-2 block w-full cursor-pointer' %>
     <% end %>
   </div>
-</div>
